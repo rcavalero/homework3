@@ -18,58 +18,80 @@ function generatePassword() {
     var numNum = 0;
     var numLower = 0;
     var numUpper = 0;
-    var availChar = 0
+    var pwChars = [];
+    var password;
 
     // Prompt user for password length
     while ( pwLen < 8 || pwLen> 128) {
         pwLen = prompt("Enter a password length between 8-128.");
         numUpper = pwLen - 3;
     }
-    console.log("PW Length = "+pwLen);    
-    // console.log("Spec Char = "+numSpCh);    
-    // console.log("Lower = "+numLower);    
-    console.log("Upper = "+numUpper);    
-    // console.log("Available = "+availChar);    
 
     // Prompt user for number of special characters
     while ( numSpCh <1 || numSpCh > numUpper) {
         numSpCh = prompt("How many Special Characters (1 - "+numUpper+")?");
     }
+    // Sets the value of numUpper to remaining characters available
     numUpper = numUpper - numSpCh +1;
     
-    console.log("Special Characters");    
-    console.log("PW Length = "+pwLen);    
-    console.log("Spec Char = "+numSpCh);    
-    console.log("Upper = "+numUpper);    
-
     // Prompt user for number of numbers
     while ( numNum <1 || numNum > numUpper) {
         numNum = prompt("How many Numbers (1 - "+numUpper+")?");
     }
+    // Sets the value of numUpper to remaining characters available
     numUpper = numUpper - numNum +1 ;
     
-    console.log("Numbers");    
-    console.log("PW Length = "+pwLen);    
-    console.log("Spec Char = "+numSpCh);    
-    console.log("Numbers = "+numNum);    
-    console.log("Upper = "+numUpper);    
-    // console.log("Available = "+availChar);    
-
     // Prompt user for number of lower case letters
     while ( numLower <1 || numLower > numUpper) {
         numLower = prompt("How many lower case letters (1 - "+numUpper+")?");
     }
+    // Sets the value of numUpper to remaining characters available
     numUpper = numUpper - numLower +1;
+   alert("Your password will contain "+numUpper+ " uppercase characters.");
+
+   // This creates a new array based on number of characters selected above
+   for (var i = 0; i < 25; i++) {
+    var item = specChar[Math.floor(Math.random()*specChar.length)];
+    pwChars.push(item);
+  }
+
+  for (var i = 0; i < 25; i++) {
+    var item = numbers[Math.floor(Math.random()*numbers.length)];
+    pwChars.push(item);
+  }
+  for (var i = 0; i < 25; i++) {
+    var item = lCase[Math.floor(Math.random()*lCase.length)];
+    pwChars.push(item);
+  }
+
+  for (var i = 0; i < 25; i++) {
+    var item = uCase[Math.floor(Math.random()*uCase.length)];
+    pwChars.push(item);
+  }
+
+  for (var i = 0; i < 5; i++) {
+    var item = uCase[Math.floor(Math.random()*uCase.length)];
+    pwChars.push(item);
+  }
+
+  pwChars.sort(function(a, b){return 0.5 - Math.random()});
+//   pwChars.join("")
+password = pwChars.join("")
     
-    console.log("Special Characters");    
+    // console.log("Special Characters");    
     console.log("PW Length = "+pwLen);    
     console.log("Spec Char = "+numSpCh);    
     console.log("Numbers = "+numNum);    
     console.log("Lower = "+numLower);    
     console.log("Upper = "+numUpper);    
+    console.log(password);
+
+
+
     // alert("ive been clicked");
-    return "password";
+    return password;
 }
+
 
 // Write password to the #password input
 function writePassword() {
