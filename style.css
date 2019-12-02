@@ -1,0 +1,21 @@
+body {
+    background-color: black;
+}
+
+.btn {
+    border-radius: 25px;
+}
+
+
+hr {
+    border: 1.2px solid lightgray;
+}
+
+textarea {
+    border-style: dashed;
+}
+
+#copy {
+    background-color: gray;
+    color: white;
+}

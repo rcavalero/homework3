@@ -6,36 +6,46 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>HW3 Password Generator</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-  </head>
+    <link rel="stylesheet" type="text/css" href = "style.css"
+</head>
   <body>
 
     <!-- create responsive layout
         can the box be centered on the screen?
       Nee 5 rows for the main section
     should header be outside of main section? -->
-    <div class="container">
-      <header class="text-center">
-        <h1>Password Generator</h1>
+    <div class="container bg-light w-50 mt-5 p-3">
+      <header class="text-center pb-3">
+        <h2>Password Generator</h2>
       </header>
-    </div> 
+    
 
         <!-- Need to center this on the page and add the h lines -->
-    <div class="container ">
-      <div class = "row">
-        <div class = "col ">
-          <h2>Instructions for Generating a Password</h2>
-          <p>Your password must be between 8-128 characters and include at least one of each of the following:</p>
-          <p>Special Characters (e.g. @#$%)</p>
-          <p>Numbers (e.g. 123...789)/p>
-          <p>Lower case letters (e.g. abc...xyz)</p>
-          <p>Upper case letters (e.g. ABC...XYZ )</p>
-          <p>Click the Generate Password button below and follow the prompts to select how many of each type of character you want in your password.  The number for upper case letters will be calculated automatically based on your responses. </p>
+    <div class="container shadow-sm bg-white rounded px-3 pb-3 pt-1">
+      <div class = "row px-3">
+        <div class = "col-sm-12 col-md-6 my-auto">
+          <h4 class = "pl-3 text-center" >Generate a Password</h4>
+        </div>
+        <div class = "col">
+          <h6 class="mb-1">Your password must be between 8-128 characters and include at least one of each of the following:</h6>
+            <dl class="mb-2">
+          <li>Special Characters  (@#$%)</li>
+          <li>Numbers  (123...789)</li>
+          <li>Lower Case Letters  (abc...xyz)</li>
+          <li>Upper Case Letters  (ABC...XYZ )</li>
+          <!-- <p>Click the Generate Password button below and follow the prompts to select how many of each type of character you want in your password.  The number for upper case letters will be calculated automatically based on your responses. </p> -->
+            </dl>
         </div>
       </div>
 
-      <div class = "row">
-        <div class = "col w-100">
-          <textarea 
+      <div class= "row px-3">
+          <div class = "col">
+            <hr class= "my-2">
+          </div>
+      </div>
+      <div class = "row px-3">
+        <div class = "col">
+          <textarea class = "rounded text-center text-muted h-100 w-100"
             rows="4"
             readonly
             id="password"
@@ -44,18 +54,25 @@
             ></textarea>
         </div>
       </div>
-            <!-- Need to change the design of the buttons -->
-      <div class = "row">
+      <div class= "row px-3">
+          <div class = "col">
+            <hr class = "my-2">
+          </div>
+      </div>
+              <!-- Need to change the design of the buttons -->
+      <div class = "row text-center py-2 px-3">
         <div class = "col">
-          <button id="generate">Generate Password</button>
-        </div>          
+          <button type = "button" class = "btn btn-danger btn-lg " id="generate">Generate Password</button>
+        </div>
+        <!-- <div class="col-2">
+        </div> -->
         <div class = "col">
-          <button id="copy" disabled>Copy to Clipboard</button>
+          <button type = "button" class = "btn btn-lg" id="copy" disabled aria-disabled="true">Copy to Clipboard</button>
         </div>
       </div>
   
     </div>
-  
+    </div>  
     <script src="script.js"></script>
   </body>
 </html>
